@@ -63,10 +63,6 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete  
-      - name: Deploy site
         uses: ./.github/actions/deploy-s3-js
         env:
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
